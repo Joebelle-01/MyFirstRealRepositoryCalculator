@@ -18,6 +18,14 @@ def divide(a, b):
         return "Error: Division by zero is undefined."
     return a / b
 
+def power(a, b):
+    return a ** b
+
+def modulo(a, b):
+    if b == 0:
+        return "Error: Modulo by zero is undefined."
+    return a % b
+
 def main():
     print("=== Simple Calculator ===")
     print("Select an operation:")
@@ -25,11 +33,13 @@ def main():
     print("2. Subtraction (-)")
     print("3. Multiplication (*)")
     print("4. Division (/)")
+    print("5. Power (^)")
+    print("6. Modulo (%)")
     
-    choice = input("Enter choice (1-4): ").strip()
+    choice = input("Enter choice (1-6): ").strip()
     
-    if choice not in ['1', '2', '3', '4']:
-        print("Invalid choice.")
+    if choice not in ['1', '2', '3', '4', '5', '6']:
+        print("Invalid choice. Please select a number between 1 and 6.")
         return
 
     try:
@@ -47,6 +57,10 @@ def main():
         print(f"Result: {num1} * {num2} = {multiply(num1, num2)}")
     elif choice == '4':
         print(f"Result: {num1} / {num2} = {divide(num1, num2)}")
+    elif choice == '5':
+        print(f"Result: {num1} ^ {num2} = {power(num1, num2)}")
+    elif choice == '6':
+        print(f"Result: {num1} % {num2} = {modulo(num1, num2)}")
 
 if __name__ == "__main__":
     main()
